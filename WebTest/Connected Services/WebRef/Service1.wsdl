@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.aoreestr.ru/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.aoreestr.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.aoreestr.ru/Imports">
+      <xsd:import schemaLocation="http://cr-syusim.corp.aoreestr.ru/BarIn/Service.svc?xsd=xsd0" namespace="http://www.aoreestr.ru/" />
+      <xsd:import schemaLocation="http://cr-syusim.corp.aoreestr.ru/BarIn/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IReciver_Register_InputMessage">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="IReciver_UnRegister_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnRegister" />
+  </wsdl:message>
+  <wsdl:message name="IReciver_Send_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:Send" />
+  </wsdl:message>
+  <wsdl:message name="IReciver_Ping_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="IReciver_Ping_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostman_Post_InputMessage">
+    <wsdl:part name="parameters" element="tns:Post" />
+  </wsdl:message>
+  <wsdl:message name="IPostman_Post_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IReciver">
+    <wsdl:operation name="Register">
+      <wsdl:input wsaw:Action="http://www.aoreestr.ru/IReciver/Register" message="tns:IReciver_Register_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnRegister">
+      <wsdl:input wsaw:Action="http://www.aoreestr.ru/IReciver/UnRegister" message="tns:IReciver_UnRegister_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Send">
+      <wsdl:output wsaw:Action="http://www.aoreestr.ru/IReciver/Send" message="tns:IReciver_Send_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:output wsaw:Action="http://www.aoreestr.ru/IReciver/Ping" message="tns:IReciver_Ping_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://www.aoreestr.ru/IReciver/PingResponse" message="tns:IReciver_Ping_InputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPostman">
+    <wsdl:operation name="Post">
+      <wsdl:input wsaw:Action="http://www.aoreestr.ru/IPostman/Post" message="tns:IPostman_Post_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.aoreestr.ru/IPostman/PostResponse" message="tns:IPostman_Post_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

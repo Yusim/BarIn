@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2f00818a-54ab-40ed-8d6a-fbd5b0c4b0fa" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://cr-syusim/BarIn/Service.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service.wsdl" MetadataType="Wsdl" ID="74cae073-f6bb-4e95-aea4-1afcdb37eaf5" SourceId="1" SourceUrl="http://cr-syusim.corp.aoreestr.ru/BarIn/Service.svc?wsdl" />
+    <MetadataFile FileName="Service.xsd" MetadataType="Schema" ID="ea9c8875-da74-41de-a298-4fd4ded270d4" SourceId="1" SourceUrl="http://cr-syusim.corp.aoreestr.ru/BarIn/Service.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service.disco" MetadataType="Disco" ID="70bf2d8b-536c-46d3-95c1-64881045ccc4" SourceId="1" SourceUrl="http://cr-syusim.corp.aoreestr.ru/BarIn/Service.svc?disco" />
+    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="51dcc88f-653a-475c-b52c-c97574bf21ed" SourceId="1" SourceUrl="http://cr-syusim.corp.aoreestr.ru/BarIn/Service.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="167d407b-9828-46f1-a934-e65948dfadcf" SourceId="1" SourceUrl="http://cr-syusim.corp.aoreestr.ru/BarIn/Service.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

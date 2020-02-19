@@ -36,15 +36,27 @@ namespace BarIn
         public Worker()
         {
             CompId = Guid.Empty; //todo GUID
-            Web = new DuplexChannelFactory<IReciver>(this, "WSDualHttpBinding_IReciver").CreateChannel();
+            try
+            {
+                Web = new DuplexChannelFactory<IReciver>(this, "WSDualHttpBinding_IReciver").CreateChannel();
+            }
+            catch(Exception ex) { MessageBox.Show($"Не удалось создать подключение\r\n{ex.Message}"); }
         }
 
         public Guid CompId { get; private set; }
 
         private readonly IReciver Web;
 
-        public void Start() { Web.Register(CompId); }
-        public void Stop() { Web.UnRegister(CompId); }
+        public void Start()
+        {
+            try { Web.Register(CompId); }
+            catch(Exception ex) { MessageBox.Show($"Не удалось зарегистрироваться\r\n{ex.Message}"); }
+        }
+        public void Stop()
+        {
+            try { Web.UnRegister(CompId); }
+            catch { }
+        }
 
         void IReciverCallback.Ping() { }
         void IReciverCallback.Send(string Text) { SendKeys.Send(Text); }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMain));
             this.QrBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.QrBox)).BeginInit();
             this.SuspendLayout();
@@ -50,9 +51,10 @@
             this.ClientSize = new System.Drawing.Size(235, 214);
             this.Controls.Add(this.QrBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "BarIn";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FMain_FormClosed);
             this.Load += new System.EventHandler(this.FMain_Load);

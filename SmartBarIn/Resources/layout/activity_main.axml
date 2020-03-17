@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+		<Button
+			android:id="@+id/bSetCompId"
+			android:layout_margin="10dp"			
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			/>		
+		<Button
+			android:id="@+id/bScan"
+			android:text="Прочитать код"
+			android:layout_margin="50dp"
+			android:background="@drawable/abc_btn_colored_material"
+			android:layout_below="@+id/bSetCompId"
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			/>		
+</RelativeLayout>

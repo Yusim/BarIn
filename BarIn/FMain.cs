@@ -1,6 +1,7 @@
 ﻿using BarCodes;
 using System;
 using System.ServiceModel;
+using System.Text;
 using System.Windows.Forms;
 
 namespace BarIn
@@ -12,16 +13,18 @@ namespace BarIn
             InitializeComponent();
         }
 
-        private const int QrVersion = 2;
+        private const int QrVersion = 3;
         private const QRCode.CorrectionLevel QrLevel= QRCode.CorrectionLevel.LevelM;
-        private const int QrSize = 8;
+        private const int QrSize = 4;
 
         private Worker Work;
 
         private void FMain_Load(object sender, EventArgs e)
         {
             Work = new Worker();
-            QrBox.Image = QRCode.CreateQR(Work.CompId.ToByteArray(), QrVersion, QrLevel, -1, QrSize);
+            string IdStr = Work.CompId.ToString("D").ToUpperInvariant();
+            byte[] buf = Encoding.UTF8.GetBytes(IdStr);
+            QrBox.Image = QRCode.CreateQR(buf, QrVersion, QrLevel, -1, QrSize);
             Work.Start();
         }
 

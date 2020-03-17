@@ -24,9 +24,6 @@
   <wsdl:message name="IPostman_Post_InputMessage">
     <wsdl:part name="parameters" element="tns:Post" />
   </wsdl:message>
-  <wsdl:message name="IPostman_Post_OutputMessage">
-    <wsdl:part name="parameters" element="tns:PostResponse" />
-  </wsdl:message>
   <wsdl:portType name="IReciver">
     <wsdl:operation name="Register">
       <wsdl:input wsaw:Action="http://www.aoreestr.ru/IReciver/Register" message="tns:IReciver_Register_InputMessage" />
@@ -45,7 +42,6 @@
   <wsdl:portType name="IPostman">
     <wsdl:operation name="Post">
       <wsdl:input wsaw:Action="http://www.aoreestr.ru/IPostman/Post" message="tns:IPostman_Post_InputMessage" />
-      <wsdl:output wsaw:Action="http://www.aoreestr.ru/IPostman/PostResponse" message="tns:IPostman_Post_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

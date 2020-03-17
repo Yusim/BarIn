@@ -87,10 +87,10 @@ namespace WebTest.WebRef {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.aoreestr.ru/", ConfigurationName="WebRef.IPostman")]
     public interface IPostman {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.aoreestr.ru/IPostman/Post", ReplyAction="http://www.aoreestr.ru/IPostman/PostResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://www.aoreestr.ru/IPostman/Post")]
         void Post(System.Guid CompId, string Text);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.aoreestr.ru/IPostman/Post", ReplyAction="http://www.aoreestr.ru/IPostman/PostResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://www.aoreestr.ru/IPostman/Post")]
         System.Threading.Tasks.Task PostAsync(System.Guid CompId, string Text);
     }
     

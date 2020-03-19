@@ -56,6 +56,12 @@ namespace SmartBarIn
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
+            if(savedInstanceState!=null)
+            {
+                IsCompIdSet = savedInstanceState.GetBoolean("IsCompIdSet");
+                CompId = Guid.Parse(savedInstanceState.GetString("CompId"));
+            }
+
             bSetCompId = FindViewById<Button>(Resource.Id.bSetCompId);
             bScan = FindViewById<Button>(Resource.Id.bScan);
 
@@ -100,6 +106,13 @@ namespace SmartBarIn
 
             SetView();
         }
-        
+
+        protected override void OnSaveInstanceState(Bundle outState)
+        {
+            outState.PutBoolean("IsCompIdSet", IsCompIdSet);
+            outState.PutString("CompId", CompId.ToString());
+            base.OnSaveInstanceState(outState);
+        }
+
     }
 }

@@ -62,6 +62,8 @@ namespace SmartBarIn
                 CompId = Guid.Parse(savedInstanceState.GetString("CompId"));
             }
 
+            MobileBarcodeScanner.Initialize(Application);
+
             bSetCompId = FindViewById<Button>(Resource.Id.bSetCompId);
             bScan = FindViewById<Button>(Resource.Id.bScan);
 
@@ -69,7 +71,6 @@ namespace SmartBarIn
             {
                 try
                 {
-                    MobileBarcodeScanner.Initialize(Application);
                     MobileBarcodeScanner scanner = new ZXing.Mobile.MobileBarcodeScanner()
                     {
                         TopText = "Регистрация сканера"
@@ -88,7 +89,6 @@ namespace SmartBarIn
             {
                 try
                 {
-                    MobileBarcodeScanner.Initialize(Application);
                     MobileBarcodeScanner scanner = new ZXing.Mobile.MobileBarcodeScanner()
                     {
                         TopText = "Чтение кода"

@@ -73,7 +73,7 @@ namespace SmartBarIn.BarInWeb {
         public event PostCompletedEventHandler PostCompleted;
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.aoreestr.ru/IPostman/Post", RequestNamespace="http://www.aoreestr.ru/", ResponseNamespace="http://www.aoreestr.ru/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.aoreestr.ru/IPostman/Post", RequestNamespace="http://www.aoreestr.ru/", OneWay=true, Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public void Post(string CompId, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string Text) {
             this.Invoke("Post", new object[] {
                         CompId,

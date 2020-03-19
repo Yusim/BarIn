@@ -92,7 +92,7 @@ namespace SmartBarIn
                     if (txt != "")
                     {
                         using (BarInWeb.Service web = new BarInWeb.Service() { Url = WebUri })
-                            web.Post(CompId.ToString(), txt);
+                            web.Post(CompId.ToString("D"), txt);
                     }
                 }
                 catch(Exception ex) { DoError(ex); }

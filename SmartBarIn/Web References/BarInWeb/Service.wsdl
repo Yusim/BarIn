@@ -24,11 +24,6 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="PostResponse">
-        <xs:complexType>
-          <xs:sequence />
-        </xs:complexType>
-      </xs:element>
       <xs:element name="Register">
         <xs:complexType>
           <xs:sequence>
@@ -106,9 +101,6 @@
   <wsdl:message name="IPostman_Post_InputMessage">
     <wsdl:part name="parameters" element="tns:Post" />
   </wsdl:message>
-  <wsdl:message name="IPostman_Post_OutputMessage">
-    <wsdl:part name="parameters" element="tns:PostResponse" />
-  </wsdl:message>
   <wsdl:message name="IReciver_Register_InputMessage">
     <wsdl:part name="parameters" element="tns:Register" />
   </wsdl:message>
@@ -127,7 +119,6 @@
   <wsdl:portType name="IPostman">
     <wsdl:operation name="Post">
       <wsdl:input wsaw:Action="http://www.aoreestr.ru/IPostman/Post" message="tns:IPostman_Post_InputMessage" />
-      <wsdl:output wsaw:Action="http://www.aoreestr.ru/IPostman/PostResponse" message="tns:IPostman_Post_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IReciver">
@@ -152,9 +143,6 @@
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WSDualHttpBinding_IReciver" type="tns:IReciver">

@@ -3,6 +3,7 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Widget;
 using System;
+using System.Collections.Generic;
 using ZXing.Mobile;
 
 namespace SmartBarIn
@@ -91,9 +92,17 @@ namespace SmartBarIn
                 {
                     MobileBarcodeScanner scanner = new ZXing.Mobile.MobileBarcodeScanner()
                     {
-                        TopText = "Чтение кода"
+                        TopText = "Чтение кода"                         
                     };
-                    ZXing.Result result = await scanner.Scan();
+                    MobileBarcodeScanningOptions opt = new MobileBarcodeScanningOptions()
+                    {
+                        PossibleFormats=new List<ZXing.BarcodeFormat>()
+                        {
+                             ZXing.BarcodeFormat.QR_CODE,
+                             ZXing.BarcodeFormat.All_1D
+                        }
+                    };
+                    ZXing.Result result = await scanner.Scan(opt);
                     string txt = (result?.Text ?? "").Trim();
                     if (txt != "")
                     {

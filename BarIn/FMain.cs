@@ -15,7 +15,7 @@ namespace BarIn
 
         private const int QrVersion = 3;
         private const QRCode.CorrectionLevel QrLevel= QRCode.CorrectionLevel.LevelM;
-        private const int QrSize = 4;
+        private const int QrSize = 10;
 
         private Worker Work;
 
@@ -25,6 +25,7 @@ namespace BarIn
             string IdStr = Work.CompId.ToString("D").ToUpperInvariant();
             byte[] buf = Encoding.UTF8.GetBytes(IdStr);
             QrBox.Image = QRCode.CreateQR(buf, QrVersion, QrLevel, -1, QrSize);
+            Text = IdStr;
             Work.Start();
         }
 
